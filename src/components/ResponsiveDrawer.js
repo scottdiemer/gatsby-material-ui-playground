@@ -43,11 +43,15 @@ const styles = theme => ({
     [theme.breakpoints.up('md')]: {
       position: 'relative',
     },
+  
   },
   content: {
     flexGrow: 1,
     backgroundColor: theme.palette.background.default,
     padding: theme.spacing.unit * 3,
+  },
+  menuItem: {
+    textDecoration: 'none',
   },
 });
 
@@ -68,9 +72,9 @@ class ResponsiveDrawer extends React.Component {
         <div className={classes.toolbar} />
         <Divider />
         <MenuList>
-          <MenuItem><Link to="/">Home</Link></MenuItem>
+          <Link className={classes.menuItem} to="/"><MenuItem>Home</MenuItem></Link>
           <Divider />
-          <MenuItem><Link to="/page-2/">Page 2</Link></MenuItem>
+          <Link className={classes.menuItem} to="/page-2/"><MenuItem>Page 2</MenuItem></Link>
         </MenuList>
       </div>
     );
